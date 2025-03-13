@@ -1,0 +1,171 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    title: "Matrimoni",
+    description: "Rendiamo il vostro giorno speciale ancora più magico con la nostra musica. Dal sottofondo elegante durante il ricevimento alla festa serale, creiamo l'atmosfera perfetta per ogni momento.",
+    icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+    </svg>`
+  },
+  {
+    title: "Feste Private",
+    description: "Compleanni, anniversari, lauree o qualsiasi altra occasione speciale. Portiamo energia e divertimento al vostro evento con un repertorio personalizzato.",
+    icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z"/>
+    </svg>`
+  },
+  {
+    title: "Eventi Aziendali",
+    description: "Dalle cene di gala alle feste aziendali, offriamo intrattenimento professionale di alto livello per eventi corporate di ogni dimensione.",
+    icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+    </svg>`
+  }
+];
+
+const features = [
+  {
+    title: "Repertorio Personalizzato",
+    description: "Adattiamo la scaletta musicale alle vostre preferenze e al tipo di evento."
+  },
+  {
+    title: "Attrezzatura Professionale",
+    description: "Utilizziamo solo equipaggiamento audio e luci di alta qualità."
+  },
+  {
+    title: "Esperienza Ventennale",
+    description: "La nostra esperienza garantisce una performance impeccabile."
+  },
+  {
+    title: "Flessibilità",
+    description: "Ci adattiamo alle vostre esigenze di orario e location."
+  }
+];
+---
+
+<Layout title="i Marcos - Feste e Cerimonie">
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="relative h-[600px] flex items-center justify-center">
+      <div class="absolute inset-0">
+        <img 
+          src="https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/feste_cerimonie.jpg"
+          alt="Feste e Cerimonie"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-black/60"></div>
+      </div>
+      <div class="relative text-center px-4 py-20 max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-bold mb-8">Feste e Cerimonie</h1>
+        <p class="text-xl text-gray-300 mb-12">
+          Rendiamo indimenticabile ogni momento speciale con la nostra musica.
+          Dal matrimonio alla festa aziendale, creiamo l'atmosfera perfetta per il vostro evento.
+        </p>
+        <a 
+          href="/contatti" 
+          class="bg-band-accent hover:bg-band-accent/80 text-white px-8 py-3 rounded-full text-lg font-semibold transition-colors inline-block"
+        >
+          Richiedi un Preventivo
+        </a>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 bg-black/30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {services.map((service) => (
+            <div class="bg-black/30 rounded-lg p-8 text-center hover:transform hover:scale-105 transition-transform">
+              <div class="text-band-accent flex justify-center mb-6" set:html={service.icon} />
+              <h3 class="text-xl font-bold mb-4">{service.title}</h3>
+              <p class="text-gray-300">{service.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-16">Perché Sceglierci</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {features.map((feature) => (
+            <div class="bg-black/30 rounded-lg p-8">
+              <h3 class="text-xl font-bold mb-4">{feature.title}</h3>
+              <p class="text-gray-300">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-black/30">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-16">Domande Frequenti</h2>
+        <div class="space-y-20">
+          <details class="group bg-black/30 rounded-lg">
+            <summary class="flex justify-between items-center cursor-pointer p-6">
+              <h3 class="text-lg font-semibold">Quanto in anticipo devo prenotare?</h3>
+              <span class="text-band-accent group-open:rotate-180 transition-transform">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </span>
+            </summary>
+            <p class="px-6 pb-6 text-gray-300">
+              Consigliamo di prenotare con almeno 3-6 mesi di anticipo, specialmente per eventi come matrimoni o durante la stagione estiva.
+            </p>
+          </details>
+
+          <details class="group bg-black/30 rounded-lg">
+            <summary class="flex justify-between items-center cursor-pointer p-6">
+              <h3 class="text-lg font-semibold">Che tipo di repertorio offrite?</h3>
+              <span class="text-band-accent group-open:rotate-180 transition-transform">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </span>
+            </summary>
+            <p class="px-6 pb-6 text-gray-300">
+              Il nostro repertorio copre tutti i grandi classici italiani, dal pop al rock, dalle ballate romantiche alla dance music. Personalizziamo la scaletta in base alle vostre preferenze.
+            </p>
+          </details>
+
+          <details class="group bg-black/30 rounded-lg">
+            <summary class="flex justify-between items-center cursor-pointer p-6">
+              <h3 class="text-lg font-semibold">Quali servizi sono inclusi nel prezzo?</h3>
+              <span class="text-band-accent group-open:rotate-180 transition-transform">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </span>
+            </summary>
+            <p class="px-6 pb-6 text-gray-300">
+              Il nostro servizio include l'attrezzatura audio e luci professionale, il trasporto, il montaggio e lo smontaggio. Offriamo anche la possibilità di personalizzare il servizio con opzioni aggiuntive.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-band-accent py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold mb-4">Pronti a Rendere Speciale il Vostro Evento?</h2>
+        <p class="text-lg mb-8">Contattateci per un preventivo personalizzato e gratuito</p>
+        <div class="space-x-4">
+          <a 
+            href="/contatti" 
+            class="bg-white text-band-accent hover:bg-gray-100 px-8 py-3 rounded-full text-lg font-semibold transition-colors inline-block"
+          >
+            Contattaci
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

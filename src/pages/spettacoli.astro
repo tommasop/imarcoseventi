@@ -1,0 +1,103 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Mock data for shows - in a real project, this would come from a CMS or database
+const shows = [
+  {
+    id: 1,
+    title: "UNA CANZONE PER TE - Omaggio ai cantautori italiani.",
+    description: "Spettacolo dinamico e ricco di ricordi che vuole omaggiare alcuni tra i più grandi cantautori italiani, come Lucio Battisti, Zucchero, Riccardo Cocciante, Renato Zero, Franco Battiato, Lucio Dalla e molti altri.",
+    image: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/shows/una_canzone_per_te.jpg",
+    videoUrl: "https://www.youtube.com/embed/AZbyJ2goRKE?si=ko6uJieJUY_9_00X"
+  },
+  {
+    id: 2,
+    title: "QUESTIONE DI FEELING - Tributo a Riccardo Cocciante",
+    description: "Concerto che ripercorre la carriera di un grandissimo cantautore del panorama italiano ed internazionale. Oltre ai grandi successi, presenteremo un omaggio a Notre Dame De Paris.",
+    image: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/shows/questione_di_feeling.png",
+    videoUrl: "https://www.youtube.com/embed/grSPYaLv67U?si=cHZ4pL-NhjNALEpE"
+  },
+  {
+    id: 3,
+    title: "MERCANTI DI STELLE - Tributo a Renato Zero",
+    description: "Spettacolo show sulle note di uno dei grandi della musica italiana.",
+    image: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/shows/mercanti_di_stelle.png",
+    videoUrl: "https://www.youtube.com/embed/KnivHbsQRXA?si=0iUKRaHref1BvPoN"
+  }
+];
+---
+
+<Layout title="i Marcos - Spettacoli">
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="bg-black/50 py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl md:text-5xl font-bold text-center mb-8">Spettacoli </h1>
+        <p class="text-xl text-center text-gray-300 max-w-2xl mx-auto">
+          Nuove proposte disponibili per eventi, feste e cerimonie.
+        </p>
+      </div>
+    </section>
+
+    <!-- Shows Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="space-y-16">
+        {shows.map((show) => (
+          <div class="bg-black/30 rounded-lg overflow-hidden">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <!-- Image Column -->
+              <div class="h-full">
+                <img 
+                  src={show.image}
+                  alt={show.title}
+                  class="w-full h-full object-cover min-h-[250px]"
+                />
+              </div>
+              
+              <!-- Video Column -->
+              <div class="h-full">
+                <div class="relative pt-[56.25%] h-full">
+                  <iframe
+                    src={show.videoUrl}
+                    class="absolute inset-0 w-full h-full"
+                    title={show.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+              
+              <!-- Description Column -->
+              <div class="p-6 flex flex-col justify-center">
+                <h3 class="text-2xl font-bold mb-4">{show.title}</h3>
+                <p class="text-gray-300">{show.description}</p>
+                <div class="mt-6">
+                  <a 
+                    href="/contattaci" 
+                    class="bg-band-accent hover:bg-band-accent/80 text-white px-6 py-2 rounded-full text-sm font-semibold transition-colors inline-block"
+                  >
+                    Prenota Questo Spettacolo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-band-accent py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold mb-4">Cerchi Qualcosa di Personalizzato?</h2>
+        <p class="text-lg mb-8">Possiamo creare uno spettacolo su misura per il tuo evento.</p>
+        <a 
+          href="/contattaci" 
+          class="bg-white text-band-accent hover:bg-gray-100 px-8 py-3 rounded-full text-lg font-semibold transition-colors inline-block"
+        >
+          Contattaci
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>

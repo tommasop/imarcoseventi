@@ -1,0 +1,829 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const photos = [
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/1.jpg",
+    alt: "Concerto al Teatro",
+    title: "Concerto al Teatro"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/2.jpg",
+    alt: "Performance Live",
+    title: "Performance Live"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/3.jpg",
+    alt: "Concerto in Piazza",
+    title: "Concerto in Piazza"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/4.jpg",
+    alt: "Serata Musicale",
+    title: "Serata Musicale"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/5.jpg",
+    alt: "Live Show",
+    title: "Live Show"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/6.jpg",
+    alt: "Evento Speciale",
+    title: "Evento Speciale"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/7.jpg",
+    alt: "Concerto Estate",
+    title: "Concerto Estate"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/8.jpg",
+    alt: "Spettacolo dal Vivo",
+    title: "Spettacolo dal Vivo"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/9.jpg",
+    alt: "Performance Musicale",
+    title: "Performance Musicale"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/10.jpg",
+    alt: "Esibizione Live",
+    title: "Esibizione Live"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/11.jpg",
+    alt: "Concerto Serale",
+    title: "Concerto Serale"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/12.jpg",
+    alt: "Festival Musicale",
+    title: "Festival Musicale"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/13.jpg",
+    alt: "Evento Musicale",
+    title: "Evento Musicale"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/14.jpg",
+    alt: "Concerto Estivo",
+    title: "Concerto Estivo"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/15.jpg",
+    alt: "Performance dal Vivo",
+    title: "Performance dal Vivo"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/16.jpg",
+    alt: "Concerto Notturno",
+    title: "Concerto Notturno"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/17.jpg",
+    alt: "Esibizione in Piazza",
+    title: "Esibizione in Piazza"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/18.jpg",
+    alt: "Evento Live",
+    title: "Evento Live"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/19.jpg",
+    alt: "Concerto Pubblico",
+    title: "Concerto Pubblico"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/20.jpg",
+    alt: "Serata Musicale",
+    title: "Serata Musicale"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/21.jpg",
+    alt: "Performance Artistica",
+    title: "Performance Artistica"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/22.jpg",
+    alt: "Concerto Speciale",
+    title: "Concerto Speciale"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/23.jpg",
+    alt: "Evento Musicale",
+    title: "Evento Musicale"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/24.jpg",
+    alt: "Concerto dal Vivo",
+    title: "Concerto dal Vivo"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/25.jpg",
+    alt: "Esibizione Musicale",
+    title: "Esibizione Musicale"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/26.jpg",
+    alt: "Concerto in Teatro",
+    title: "Concerto in Teatro"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/27.jpg",
+    alt: "Performance Live",
+    title: "Performance Live"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/28.jpg",
+    alt: "Evento Musicale",
+    title: "Evento Musicale"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/29.jpg",
+    alt: "Concerto Estivo",
+    title: "Concerto Estivo"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/30.jpg",
+    alt: "Esibizione Serale",
+    title: "Esibizione Serale"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/31.jpg",
+    alt: "Concerto Pubblico",
+    title: "Concerto Pubblico"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/32.jpg",
+    alt: "Evento Live",
+    title: "Evento Live"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/33.jpg",
+    alt: "Performance Musicale",
+    title: "Performance Musicale"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/34.jpg",
+    alt: "Concerto in Piazza",
+    title: "Concerto in Piazza"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/35.jpg",
+    alt: "Esibizione Artistica",
+    title: "Esibizione Artistica"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/36.jpg",
+    alt: "Evento Musicale",
+    title: "Evento Musicale"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/37.jpg",
+    alt: "Concerto Serale",
+    title: "Concerto Serale"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/38.jpg",
+    alt: "Performance dal Vivo",
+    title: "Performance dal Vivo"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/39.jpg",
+    alt: "Evento Live",
+    title: "Evento Live"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/40.jpg",
+    alt: "Concerto Estivo",
+    title: "Concerto Estivo"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/41.jpg",
+    alt: "Esibizione Musicale",
+    title: "Esibizione Musicale"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/42.jpg",
+    alt: "Concerto Pubblico",
+    title: "Concerto Pubblico"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/43.jpg",
+    alt: "Performance Artistica",
+    title: "Performance Artistica"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/44.jpg",
+    alt: "Evento Musicale",
+    title: "Evento Musicale"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/45.jpg",
+    alt: "Concerto dal Vivo",
+    title: "Concerto dal Vivo"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/46.jpg",
+    alt: "Esibizione Serale",
+    title: "Esibizione Serale"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/47.jpg",
+    alt: "Concerto in Teatro",
+    title: "Concerto in Teatro"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/48.jpg",
+    alt: "Performance Live",
+    title: "Performance Live"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/49.jpg",
+    alt: "Evento Musicale",
+    title: "Evento Musicale"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/50.jpg",
+    alt: "Concerto Estivo",
+    title: "Concerto Estivo"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/51.jpg",
+    alt: "Esibizione Musicale",
+    title: "Esibizione Musicale"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/52.jpg",
+    alt: "Concerto Pubblico",
+    title: "Concerto Pubblico"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/53.jpg",
+    alt: "Performance Artistica",
+    title: "Performance Artistica"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/54.jpg",
+    alt: "Evento Live",
+    title: "Evento Live"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/55.jpg",
+    alt: "Concerto Serale",
+    title: "Concerto Serale"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/56.jpg",
+    alt: "Performance dal Vivo",
+    title: "Performance dal Vivo"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/57.jpg",
+    alt: "Evento Musicale",
+    title: "Evento Musicale"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/58.jpg",
+    alt: "Concerto Estivo",
+    title: "Concerto Estivo"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/59.jpg",
+    alt: "Esibizione Musicale",
+    title: "Esibizione Musicale"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/60.jpg",
+    alt: "Concerto Pubblico",
+    title: "Concerto Pubblico"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/61.jpg",
+    alt: "Performance Artistica",
+    title: "Performance Artistica"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/62.jpg",
+    alt: "Evento Live",
+    title: "Evento Live"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/63.jpg",
+    alt: "Concerto Serale",
+    title: "Concerto Serale"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/64.jpg",
+    alt: "Performance dal Vivo",
+    title: "Performance dal Vivo"
+  },
+  {
+    src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/65.jpg",
+    alt: "Evento Musicale",
+    title: "Evento Musicale"
+  }
+];
+---
+
+<Layout title="iMarcos Eventi - Galleria Foto">
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="bg-black/50 py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl md:text-5xl font-bold text-center mb-8">Galleria Fotografica</h1>
+      </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {photos.map((photo, index) => (
+          <button 
+            class="relative group cursor-pointer overflow-hidden rounded-lg w-full h-64"
+            data-photo-index={index}
+            onclick={`window.openPhotoModal(${index})`}
+          >
+            <img 
+              src={photo.src}
+              alt={photo.alt}
+              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </button>
+        ))}
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div 
+      id="photo-modal"
+      class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden items-center justify-center"
+    >
+      <button 
+        id="close-modal"
+        class="absolute top-4 right-4 text-white hover:text-band-accent"
+        aria-label="Chiudi"
+        onclick="window.closePhotoModal()"
+      >
+        <svg 
+          class="w-8 h-8" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+        >
+          <path 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            stroke-width="2" 
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+
+      <button 
+        id="prev-photo"
+        class="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-band-accent"
+        aria-label="Foto precedente"
+        onclick="window.showPrevPhoto()"
+      >
+        <svg 
+          class="w-8 h-8" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+        >
+          <path 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            stroke-width="2" 
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+      </button>
+
+      <button 
+        id="next-photo"
+        class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-band-accent"
+        aria-label="Foto successiva"
+        onclick="window.showNextPhoto()"
+      >
+        <svg 
+          class="w-8 h-8" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+        >
+          <path 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            stroke-width="2" 
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </button>
+
+      <div class="max-w-7xl max-h-[90vh] mx-auto p-4">
+        <img 
+          id="modal-image"
+          src=""
+          alt=""
+          class="max-w-full max-h-[80vh] object-contain mx-auto"
+        />
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  const photos = [
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/1.jpg",
+      alt: "Concerto al Teatro",
+      title: "Concerto al Teatro"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/2.jpg",
+      alt: "Performance Live",
+      title: "Performance Live"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/3.jpg",
+      alt: "Concerto in Piazza",
+      title: "Concerto in Piazza"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/4.jpg",
+      alt: "Serata Musicale",
+      title: "Serata Musicale"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/5.jpg",
+      alt: "Live Show",
+      title: "Live Show"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/6.jpg",
+      alt: "Evento Speciale",
+      title: "Evento Speciale"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/7.jpg",
+      alt: "Concerto Estate",
+      title: "Concerto Estate"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/8.jpg",
+      alt: "Spettacolo dal Vivo",
+      title: "Spettacolo dal Vivo"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/9.jpg",
+      alt: "Performance Musicale",
+      title: "Performance Musicale"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/10.jpg",
+      alt: "Esibizione Live",
+      title: "Esibizione Live"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/11.jpg",
+      alt: "Concerto Serale",
+      title: "Concerto Serale"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/12.jpg",
+      alt: "Festival Musicale",
+      title: "Festival Musicale"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/13.jpg",
+      alt: "Evento Musicale",
+      title: "Evento Musicale"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/14.jpg",
+      alt: "Concerto Estivo",
+      title: "Concerto Estivo"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/15.jpg",
+      alt: "Performance dal Vivo",
+      title: "Performance dal Vivo"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/16.jpg",
+      alt: "Concerto Notturno",
+      title: "Concerto Notturno"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/17.jpg",
+      alt: "Esibizione in Piazza",
+      title: "Esibizione in Piazza"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/18.jpg",
+      alt: "Evento Live",
+      title: "Evento Live"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/19.jpg",
+      alt: "Concerto Pubblico",
+      title: "Concerto Pubblico"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/20.jpg",
+      alt: "Serata Musicale",
+      title: "Serata Musicale"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/21.jpg",
+      alt: "Performance Artistica",
+      title: "Performance Artistica"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/22.jpg",
+      alt: "Concerto Speciale",
+      title: "Concerto Speciale"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/23.jpg",
+      alt: "Evento Musicale",
+      title: "Evento Musicale"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/24.jpg",
+      alt: "Concerto dal Vivo",
+      title: "Concerto dal Vivo"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/25.jpg",
+      alt: "Esibizione Musicale",
+      title: "Esibizione Musicale"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/26.jpg",
+      alt: "Concerto in Teatro",
+      title: "Concerto in Teatro"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/27.jpg",
+      alt: "Performance Live",
+      title: "Performance Live"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/28.jpg",
+      alt: "Evento Musicale",
+      title: "Evento Musicale"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/29.jpg",
+      alt: "Concerto Estivo",
+      title: "Concerto Estivo"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/30.jpg",
+      alt: "Esibizione Serale",
+      title: "Esibizione Serale"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/31.jpg",
+      alt: "Concerto Pubblico",
+      title: "Concerto Pubblico"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/32.jpg",
+      alt: "Evento Live",
+      title: "Evento Live"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/33.jpg",
+      alt: "Performance Musicale",
+      title: "Performance Musicale"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/34.jpg",
+      alt: "Concerto in Piazza",
+      title: "Concerto in Piazza"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/35.jpg",
+      alt: "Esibizione Artistica",
+      title: "Esibizione Artistica"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/36.jpg",
+      alt: "Evento Musicale",
+      title: "Evento Musicale"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/37.jpg",
+      alt: "Concerto Serale",
+      title: "Concerto Serale"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/38.jpg",
+      alt: "Performance dal Vivo",
+      title: "Performance dal Vivo"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/39.jpg",
+      alt: "Evento Live",
+      title: "Evento Live"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/40.jpg",
+      alt: "Concerto Estivo",
+      title: "Concerto Estivo"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/41.jpg",
+      alt: "Esibizione Musicale",
+      title: "Esibizione Musicale"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/42.jpg",
+      alt: "Concerto Pubblico",
+      title: "Concerto Pubblico"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/43.jpg",
+      alt: "Performance Artistica",
+      title: "Performance Artistica"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/44.jpg",
+      alt: "Evento Musicale",
+      title: "Evento Musicale"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/45.jpg",
+      alt: "Concerto dal Vivo",
+      title: "Concerto dal Vivo"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/46.jpg",
+      alt: "Esibizione Serale",
+      title: "Esibizione Serale"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/47.jpg",
+      alt: "Concerto in Teatro",
+      title: "Concerto in Teatro"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/48.jpg",
+      alt: "Performance Live",
+      title: "Performance Live"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/49.jpg",
+      alt: "Evento Musicale",
+      title: "Evento Musicale"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/50.jpg",
+      alt: "Concerto Estivo",
+      title: "Concerto Estivo"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/51.jpg",
+      alt: "Esibizione Musicale",
+      title: "Esibizione Musicale"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/52.jpg",
+      alt: "Concerto Pubblico",
+      title: "Concerto Pubblico"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/53.jpg",
+      alt: "Performance Artistica",
+      title: "Performance Artistica"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/54.jpg",
+      alt: "Evento Live",
+      title: "Evento Live"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/55.jpg",
+      alt: "Concerto Serale",
+      title: "Concerto Serale"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/56.jpg",
+      alt: "Performance dal Vivo",
+      title: "Performance dal Vivo"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/57.jpg",
+      alt: "Evento Musicale",
+      title: "Evento Musicale"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/58.jpg",
+      alt: "Concerto Estivo",
+      title: "Concerto Estivo"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/59.jpg",
+      alt: "Esibizione Musicale",
+      title: "Esibizione Musicale"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/60.jpg",
+      alt: "Concerto Pubblico",
+      title: "Concerto Pubblico"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/61.jpg",
+      alt: "Performance Artistica",
+      title: "Performance Artistica"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/62.jpg",
+      alt: "Evento Live",
+      title: "Evento Live"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/63.jpg",
+      alt: "Concerto Serale",
+      title: "Concerto Serale"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/64.jpg",
+      alt: "Performance dal Vivo",
+      title: "Performance dal Vivo"
+    },
+    {
+      src: "https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/photos/65.jpg",
+      alt: "Evento Musicale",
+      title: "Evento Musicale"
+    }
+  ];
+
+  let currentPhotoIndex = 0;
+  const modal = document.getElementById('photo-modal');
+  const modalImage = document.getElementById('modal-image');
+
+  function showPhoto(index) {
+    const photo = photos[index];
+    modalImage.src = photo.src;
+    modalImage.alt = photo.alt;
+    currentPhotoIndex = index;
+  }
+
+  function openModal(index) {
+    showPhoto(index);
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  function showNextPhoto() {
+    const nextIndex = (currentPhotoIndex + 1) % photos.length;
+    showPhoto(nextIndex);
+  }
+
+  function showPrevPhoto() {
+    const prevIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
+    showPhoto(prevIndex);
+  }
+
+  // Make functions available globally
+  window.openPhotoModal = openModal;
+  window.closePhotoModal = closeModal;
+  window.showNextPhoto = showNextPhoto;
+  window.showPrevPhoto = showPrevPhoto;
+
+  // Add event listeners when the page loads
+  document.addEventListener('astro:page-load', () => {
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!modal.classList.contains('hidden')) {
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'ArrowLeft') showPrevPhoto();
+        if (e.key === 'ArrowRight') showNextPhoto();
+      }
+    });
+
+    // Close modal when clicking outside the image
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  });
+</script>

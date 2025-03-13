@@ -1,0 +1,160 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+const isCurrentPage = (path: string) => {
+  if (path === '/') {
+    return currentPath === path;
+  }
+  return currentPath.startsWith(path);
+};
+---
+
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Sito web ufficiale della band" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-band-primary text-white">
+    <nav class="fixed w-full bg-black/90 backdrop-blur-sm z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <a href="/" class="flex items-center">
+            <img 
+              src="https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/logo-transparent.png" 
+              alt="i Marcos Eventi" 
+              class="h-14" 
+            />
+          </a>
+          
+          <!-- Mobile menu button -->
+          <button 
+            type="button"
+            id="mobile-menu-button" 
+            class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:text-band-accent focus:outline-none"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Apri menu principale</span>
+            <svg 
+              class="block h-6 w-6" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor" 
+              aria-hidden="true"
+            >
+              <path 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+
+          <!-- Desktop menu -->
+          <div class="hidden md:flex md:items-center md:space-x-8">
+            <a href="/" class={`text-base hover:text-band-accent transition-colors ${isCurrentPage('/') ? 'text-band-accent font-bold' : 'text-white'}`}>Home</a>
+            <a href="/chi-siamo" class={`text-base hover:text-band-accent transition-colors ${isCurrentPage('/chi-siamo') ? 'text-band-accent font-bold' : 'text-white'}`}>Chi Siamo</a>
+            <a href="/foto" class={`text-base hover:text-band-accent transition-colors ${isCurrentPage('/foto') ? 'text-band-accent font-bold' : 'text-white'}`}>Foto</a>
+            <a href="/spettacoli" class={`text-base hover:text-band-accent transition-colors ${isCurrentPage('/spettacoli') ? 'text-band-accent font-bold' : 'text-white'}`}>Spettacoli</a>
+            <a href="/feste-e-cerimonie" class={`text-base hover:text-band-accent transition-colors ${isCurrentPage('/feste-e-cerimonie') ? 'text-band-accent font-bold' : 'text-white'}`}>Feste e Cerimonie</a>
+            <a href="/contatti" class={`text-base hover:text-band-accent transition-colors ${isCurrentPage('/contatti') ? 'text-band-accent font-bold' : 'text-white'}`}>Contatti</a>
+          </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+          <div class="px-2 pt-2 pb-3 space-y-1">
+            <a 
+              href="/" 
+              class={`block px-3 py-2 rounded-md text-base font-medium hover:text-band-accent transition-colors ${isCurrentPage('/') ? 'text-band-accent font-bold' : 'text-white'}`}
+            >
+              Home
+            </a>
+            <a 
+              href="/chi-siamo" 
+              class={`block px-3 py-2 rounded-md text-base font-medium hover:text-band-accent transition-colors ${isCurrentPage('/chi-siamo') ? 'text-band-accent font-bold' : 'text-white'}`}
+            >
+              Chi Siamo
+            </a>
+            <a 
+              href="/foto" 
+              class={`block px-3 py-2 rounded-md text-base font-medium hover:text-band-accent transition-colors ${isCurrentPage('/foto') ? 'text-band-accent font-bold' : 'text-white'}`}
+            >
+              Foto
+            </a>
+            <a 
+              href="/spettacoli" 
+              class={`block px-3 py-2 rounded-md text-base font-medium hover:text-band-accent transition-colors ${isCurrentPage('/spettacoli') ? 'text-band-accent font-bold' : 'text-white'}`}
+            >
+              Spettacoli
+            </a>
+            <a 
+              href="/feste-e-cerimonie" 
+              class={`block px-3 py-2 rounded-md text-base font-medium hover:text-band-accent transition-colors ${isCurrentPage('/feste-e-cerimonie') ? 'text-band-accent font-bold' : 'text-white'}`}
+            >
+              Feste e Cerimonie
+            </a>
+            <a 
+              href="/contatta" 
+              class={`block px-3 py-2 rounded-md text-base font-medium hover:text-band-accent transition-colors ${isCurrentPage('/contattaci') ? 'text-band-accent font-bold' : 'text-white'}`}
+            >
+              Contattaci
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <slot />
+
+    <footer class="bg-black py-8 mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p>&copy; {new Date().getFullYear()} iMarcos Eventi. Tutti i diritti riservati.</p>
+      </div>
+    </footer>
+
+    <script>
+      function setupMobileMenu() {
+        const button = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        
+        if (button && menu) {
+          button.addEventListener('click', () => {
+            const expanded = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', (!expanded).toString());
+            menu.classList.toggle('hidden');
+          });
+        }
+      }
+
+      // Setup on initial load
+      setupMobileMenu();
+
+      // Setup on each navigation
+      document.addEventListener('astro:page-load', () => {
+        setupMobileMenu();
+      });
+
+      // Close mobile menu on navigation
+      document.addEventListener('astro:after-navigation', () => {
+        const menu = document.getElementById('mobile-menu');
+        const button = document.getElementById('mobile-menu-button');
+        if (menu && button) {
+          menu.classList.add('hidden');
+          button.setAttribute('aria-expanded', 'false');
+        }
+      });
+    </script>
+  </body>
+</html>

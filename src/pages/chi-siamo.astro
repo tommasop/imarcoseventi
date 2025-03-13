@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="i Marcos - Chi Siamo">
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="bg-black/50 py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl md:text-5xl font-bold text-center mb-8">Chi Siamo</h1>
+      </div>
+    </section>
+
+    <!-- About Us Card -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="bg-black/30 rounded-lg overflow-hidden">
+        <div class="flex flex-col md:flex-row">
+          <div class="md:w-1/2">
+            <img 
+              src="https://raw.githubusercontent.com/tommasop/imarcoseventi/master/public/chi_siamo.jpg"
+              alt="i Marcos Eventi"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="md:w-1/2 p-8">
+            <h2 class="text-3xl font-bold mb-6">La Nostra Storia</h2>
+            <p class="text-gray-300 mb-6">
+             I Marcos Eventi nasce dalla collaborazione ormai ventennale tra  Marco Marchetti (CANTANTE SOLISTA) e Marco Resovaglio (PRODUTTORE ATISTICO); l’idea è quella di proporre musica dal vivo, riadattando i brani di alcuni cantautori che hanno fatto la storia nel panorama italiano ed internazionale. 
+            </p>
+            <p class="text-gray-300 mb-6">
+              La nostra produzione crea spettacoli da proporre ad organizzatori ed impresari. Disponiamo di una rete consolidata di validi musicisti e tecnici che collaborano con noi da tempo; il nostro obiettivo è portare per le piazze e nei teatri, spettacoli di alta qualità a prezzi competitivi, per accontentare più possibile i vari tipi di pubblico.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-band-accent py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold mb-4">Pronti a Creare Insieme il Tuo Concerto Personalizzato?</h2>
+      
+        <a 
+          href="/contattaci" 
+          class="bg-white text-band-accent hover:bg-gray-100 px-8 py-3 rounded-full text-lg font-semibold transition-colors inline-block"
+        >
+          Prenota il tuo Evento
+        </a>
+      </div>
+    </section
+  </main>
+</Layout>
